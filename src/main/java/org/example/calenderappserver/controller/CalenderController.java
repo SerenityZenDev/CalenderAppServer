@@ -3,6 +3,7 @@ package org.example.calenderappserver.controller;
 import java.util.List;
 import org.example.calenderappserver.dto.CalenderRequestDto;
 import org.example.calenderappserver.dto.CalenderResponseDto;
+import org.example.calenderappserver.dto.DeleteRequestDto;
 import org.example.calenderappserver.service.CalenderService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,7 @@ public class CalenderController {
 
     @GetMapping("/schedules/{scheduleId}")
     public CalenderResponseDto readSchedule(@PathVariable Long scheduleId){
+        System.out.println("동작중");
         return calenderService.readSchedule(scheduleId);
     }
 
@@ -45,8 +47,9 @@ public class CalenderController {
     }
 
     @DeleteMapping("schedules/{scheduleId}")
-    public CalenderResponseDto deleteSchedule(@PathVariable Long scheduleId, @RequestBody String password){
-        return calenderService.deleteSchedule(scheduleId, password);
+    public CalenderResponseDto deleteSchedule(@PathVariable Long scheduleId,
+        @RequestBody DeleteRequestDto deleteRequestDto){
+        return calenderService.deleteSchedule(scheduleId, deleteRequestDto);
     }
 
 }
