@@ -1,8 +1,10 @@
 package org.example.calenderappserver.dto;
 
 import java.time.LocalDateTime;
+import lombok.Getter;
 import org.example.calenderappserver.entity.Calender;
 
+@Getter
 public class CalenderResponseDto {
     private Long scheduleId;
     private String title;
