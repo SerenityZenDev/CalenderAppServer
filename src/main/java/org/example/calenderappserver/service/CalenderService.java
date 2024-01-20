@@ -3,6 +3,7 @@ package org.example.calenderappserver.service;
 import java.util.List;
 import org.example.calenderappserver.dto.CalenderRequestDto;
 import org.example.calenderappserver.dto.CalenderResponseDto;
+import org.example.calenderappserver.dto.DeleteRequestDto;
 import org.example.calenderappserver.entity.Calender;
 import org.example.calenderappserver.repository.CalenderRepository;
 import org.springframework.stereotype.Service;
@@ -49,8 +50,9 @@ public class CalenderService {
         return calenderResponseDto;
     }
 
-    public CalenderResponseDto deleteSchedule(Long scheduleId, String password) {
+    public CalenderResponseDto deleteSchedule(Long scheduleId, DeleteRequestDto deleteRequestDto) {
         Calender calender = findCalender(scheduleId);
+        String password = deleteRequestDto.getPassword();
         if ( checkPassword(calender, password)){
             calenderRepository.delete(calender);
         }
