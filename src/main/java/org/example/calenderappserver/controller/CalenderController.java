@@ -5,6 +5,7 @@ import org.example.calenderappserver.dto.CalenderRequestDto;
 import org.example.calenderappserver.dto.CalenderResponseDto;
 import org.example.calenderappserver.dto.DeleteRequestDto;
 import org.example.calenderappserver.service.CalenderService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,14 +41,15 @@ public class CalenderController {
         return calenderService.readSchedules();
     }
 
-    @PutMapping("schedules/{scheduleId}")
-    public CalenderResponseDto updateSchedule(@PathVariable Long scheduleId,
-        @RequestBody CalenderRequestDto calenderRequestDto){
+    @PutMapping("/schedules/{scheduleId}")
+    public ResponseEntity<?> updateSchedule(
+        @PathVariable Long scheduleId,
+        @RequestBody CalenderRequestDto calenderRequestDto) {
         return calenderService.updateSchedule(scheduleId, calenderRequestDto);
     }
 
     @DeleteMapping("schedules/{scheduleId}")
-    public CalenderResponseDto deleteSchedule(@PathVariable Long scheduleId,
+    public ResponseEntity<String> deleteSchedule(@PathVariable Long scheduleId,
         @RequestBody DeleteRequestDto deleteRequestDto){
         return calenderService.deleteSchedule(scheduleId, deleteRequestDto);
     }
