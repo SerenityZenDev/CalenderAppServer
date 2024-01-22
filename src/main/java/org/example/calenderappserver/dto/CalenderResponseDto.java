@@ -6,6 +6,7 @@ import org.example.calenderappserver.entity.Calender;
 
 @Getter
 public class CalenderResponseDto {
+
     private Long scheduleId;
     private String title;
     private String content;

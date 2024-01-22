@@ -26,18 +26,18 @@ public class CalenderController {
     }
 
     @PostMapping("/schedules")
-    public CalenderResponseDto createSchedule(@RequestBody CalenderRequestDto calenderRequestDto){
+    public CalenderResponseDto createSchedule(@RequestBody CalenderRequestDto calenderRequestDto) {
         return calenderService.createSchedule(calenderRequestDto);
     }
 
     @GetMapping("/schedules/{scheduleId}")
-    public CalenderResponseDto readSchedule(@PathVariable Long scheduleId){
+    public CalenderResponseDto readSchedule(@PathVariable Long scheduleId) {
         System.out.println("동작중");
         return calenderService.readSchedule(scheduleId);
     }
 
     @GetMapping("/schedules")
-    public List<CalenderResponseDto> readSchedules(){
+    public List<CalenderResponseDto> readSchedules() {
         return calenderService.readSchedules();
     }
 
@@ -50,7 +50,7 @@ public class CalenderController {
 
     @DeleteMapping("schedules/{scheduleId}")
     public ResponseEntity<String> deleteSchedule(@PathVariable Long scheduleId,
-        @RequestBody DeleteRequestDto deleteRequestDto){
+        @RequestBody DeleteRequestDto deleteRequestDto) {
         return calenderService.deleteSchedule(scheduleId, deleteRequestDto);
     }
 

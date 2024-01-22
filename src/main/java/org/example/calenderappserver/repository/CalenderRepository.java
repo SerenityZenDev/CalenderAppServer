@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CalenderRepository extends JpaRepository<Calender, Long> {
+
     List<Calender> findAllByOrderByCreatedAtDesc();
 }

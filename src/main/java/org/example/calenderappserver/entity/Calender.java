@@ -17,6 +17,7 @@ import org.example.calenderappserver.dto.CalenderRequestDto;
 @Table(name = "calender")
 @NoArgsConstructor
 public class Calender extends Timestamped {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long scheduleId;
@@ -30,9 +31,9 @@ public class Calender extends Timestamped {
     private String password;
 
     public Calender(CalenderRequestDto calenderRequestDto) {
-         this.title = calenderRequestDto.getTitle();
-         this.content = calenderRequestDto.getContent();
-         this.userName = calenderRequestDto.getUserName();
-         this.password = calenderRequestDto.getPassword();
+        this.title = calenderRequestDto.getTitle();
+        this.content = calenderRequestDto.getContent();
+        this.userName = calenderRequestDto.getUserName();
+        this.password = calenderRequestDto.getPassword();
     }
 }
