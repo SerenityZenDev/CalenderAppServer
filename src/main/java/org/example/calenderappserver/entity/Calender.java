@@ -23,7 +23,7 @@ public class Calender extends Timestamped {
     @Column
     private String title;
     @Column
-    private String context;
+    private String content;
     @Column
     private String userName;
     @Column
@@ -31,7 +31,7 @@ public class Calender extends Timestamped {
 
     public Calender(CalenderRequestDto calenderRequestDto) {
          this.title = calenderRequestDto.getTitle();
-         this.context = calenderRequestDto.getContext();
+         this.content = calenderRequestDto.getContent();
          this.userName = calenderRequestDto.getUserName();
          this.password = calenderRequestDto.getPassword();
     }

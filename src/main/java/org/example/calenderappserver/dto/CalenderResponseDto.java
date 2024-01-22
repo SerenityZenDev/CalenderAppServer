@@ -8,14 +8,14 @@ import org.example.calenderappserver.entity.Calender;
 public class CalenderResponseDto {
     private Long scheduleId;
     private String title;
-    private String context;
+    private String content;
     private String userName;
     private LocalDateTime createdAt;
 
     public CalenderResponseDto(Calender calender) {
         this.scheduleId = calender.getScheduleId();
         this.title = calender.getTitle();
-        this.context = calender.getContext();
+        this.content = calender.getContent();
         this.userName = calender.getUserName();
         this.createdAt = calender.getCreatedAt();
     }
