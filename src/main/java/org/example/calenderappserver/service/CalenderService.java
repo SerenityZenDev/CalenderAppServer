@@ -10,6 +10,7 @@ import org.example.calenderappserver.repository.CalenderRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class CalenderService {
@@ -42,6 +43,7 @@ public class CalenderService {
             .map(CalenderResponseDto::new).toList();
     }
 
+    @Transactional
     public ResponseEntity<?> updateSchedule(Long scheduleId,
         CalenderRequestDto calenderRequestDto) {
         Calender calender = findCalender(scheduleId);
