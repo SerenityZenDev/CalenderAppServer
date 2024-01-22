@@ -50,7 +50,6 @@ public class CalenderService {
             if (checkPassword(calender, password)) {
                 calender.setTitle(calenderRequestDto.getTitle());
                 calender.setContent(calenderRequestDto.getContent());
-                calender.setUserName(calenderRequestDto.getUserName());
             }
             CalenderResponseDto calenderResponseDto = new CalenderResponseDto(calender);
             return ResponseEntity.ok(calenderResponseDto);
