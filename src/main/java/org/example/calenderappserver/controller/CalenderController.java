@@ -8,6 +8,7 @@ import org.example.calenderappserver.service.CalenderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -41,9 +42,8 @@ public class CalenderController {
         return calenderService.readSchedules();
     }
 
-    @PutMapping("/schedules/{scheduleId}")
-    public ResponseEntity<?> updateSchedule(
-        @PathVariable Long scheduleId,
+    @PatchMapping("/schedules/{scheduleId}")
+    public ResponseEntity<?> updateSchedule(@PathVariable Long scheduleId,
         @RequestBody CalenderRequestDto calenderRequestDto) {
         return calenderService.updateSchedule(scheduleId, calenderRequestDto);
     }
