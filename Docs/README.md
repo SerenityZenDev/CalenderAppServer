@@ -8,7 +8,7 @@
 
 
 # 🎛️ API 명세서
-![img.png](API.png)
+https://www.notion.so/ee9eb47c03f34c7bb21c40b21dae367c?v=7cc233e98e2b4dd88486649d01c7b74f
 
 ----
 
@@ -18,7 +18,7 @@
 ----
 
 # 🔐 ERD
-![img.png](ERD.png)
+![img.png](erd.png)
 
 # 📚 기능 정의
 - [x]  일정 작성 기능
