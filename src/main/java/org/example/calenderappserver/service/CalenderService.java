@@ -47,9 +47,7 @@ public class CalenderService {
 
             checkPassword(calender, calenderRequestDto.getPassword());
 
-            calender.setTitle(calenderRequestDto.getTitle());
-            calender.setContent(calenderRequestDto.getContent());
-            calender.setUsername(calenderRequestDto.getUsername());
+            calender.update(calenderRequestDto);
 
             return ResponseEntity.ok(new CalenderResponseDto(calender));
         } catch (IllegalArgumentException e) {

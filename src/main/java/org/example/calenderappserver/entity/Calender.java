@@ -36,4 +36,10 @@ public class Calender extends Timestamped {
         this.username = calenderRequestDto.getUsername();
         this.password = calenderRequestDto.getPassword();
     }
+
+    public void update(CalenderRequestDto calenderRequestDto) {
+        this.title = calenderRequestDto.getTitle();
+        this.content = calenderRequestDto.getContent();
+        this.username = calenderRequestDto.getUsername();
+    }
 }
