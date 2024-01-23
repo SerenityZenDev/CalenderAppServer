@@ -14,26 +14,26 @@ import org.example.calenderappserver.dto.CalenderRequestDto;
 @Entity
 @Getter
 @Setter
-@Table(name = "calender")
+@Table(name = "CALENDER")
 @NoArgsConstructor
 public class Calender extends Timestamped {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long scheduleId;
-    @Column
+    @Column(name = "TITLE", length = 100)
     private String title;
-    @Column
+    @Column(name = "CONTENT", length = 1024)
     private String content;
-    @Column
-    private String userName;
-    @Column
+    @Column(name = "USERNAME", length = 16)
+    private String username;
+    @Column(name = "PASSWORD", length = 32)
     private String password;
 
     public Calender(CalenderRequestDto calenderRequestDto) {
         this.title = calenderRequestDto.getTitle();
         this.content = calenderRequestDto.getContent();
-        this.userName = calenderRequestDto.getUserName();
+        this.username = calenderRequestDto.getUsername();
         this.password = calenderRequestDto.getPassword();
     }
 }

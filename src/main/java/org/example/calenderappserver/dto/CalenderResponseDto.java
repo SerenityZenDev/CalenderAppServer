@@ -10,14 +10,14 @@ public class CalenderResponseDto {
     private Long scheduleId;
     private String title;
     private String content;
-    private String userName;
+    private String username;
     private LocalDateTime createdAt;
 
     public CalenderResponseDto(Calender calender) {
         this.scheduleId = calender.getScheduleId();
         this.title = calender.getTitle();
         this.content = calender.getContent();
-        this.userName = calender.getUserName();
+        this.username = calender.getUsername();
         this.createdAt = calender.getCreatedAt();
     }
 }
