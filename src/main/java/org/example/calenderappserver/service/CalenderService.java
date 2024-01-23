@@ -49,6 +49,7 @@ public class CalenderService {
 
             calender.setTitle(calenderRequestDto.getTitle());
             calender.setContent(calenderRequestDto.getContent());
+            calender.setUsername(calenderRequestDto.getUsername());
 
             return ResponseEntity.ok(new CalenderResponseDto(calender));
         } catch (IllegalArgumentException e) {
